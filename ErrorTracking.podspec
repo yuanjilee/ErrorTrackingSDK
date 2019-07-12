@@ -21,7 +21,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/yuanjilee/ErrorTrackingSDK.git", :tag => "0.1.0" }
-  s.xcconfig = { "OTHER_LDFLAGS" => "-lz" }
+  s.xcconfig = {
+    'VALID_ARCHS' =>  'arm64 x86_64',
+  }
 
   s.source_files = "ErrorTracking/ErrorTracking.framework/Headers/*.{h}"
   s.vendored_frameworks = 'ErrorTracking/ErrorTracking.framework'
